@@ -6,10 +6,10 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-d1 = Physician.create(name: "Dr. John Smith", practice: "Smith Orthopaedics")
-d2 = Physician.create(name: "Dr. John Doe", practice: "Doe Orthopaedics")
-d3 = Physician.create(name: "Dr. Bob Roberts", practice: "Roberts Orthopaedics")
-d4 = Physician.create(name: "Dr. Bill Williams", practice: "Williams Orthopaedics")
+d1 = Physician.create(name: "Dr. Gregory House", practice: "House Orthopaedics")
+d2 = Physician.create(name: "Dr. James Andrews", practice: "Andrews Orthopaedics")
+d3 = Physician.create(name: "Dr. Emmett Brown", practice: "Brown Orthopaedics")
+d4 = Physician.create(name: "Dr. Archibald Graham", practice: "Williams Orthopaedics")
 d5 = Physician.create(name: "Dr. Patch Adams", practice: "Adams Orthopaedics")
 
 p1 = Patient.create(name: "Walter White", knee_location: "Right", surgery_type: "Total Knee Replacement")
