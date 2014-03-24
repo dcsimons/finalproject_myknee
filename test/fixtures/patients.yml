@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  physician_id: 
+  name: MyString
+  knee_location: MyString
+  surgery_type: MyString
+  knee_brand: MyString
+  knee_brand_type: MyString
+  address1: MyString
+  address2: MyString
+  city: MyString
+  state: MyString
+  zipcode: 1
+  phone: 1
+  email: MyString
+
+two:
+  physician_id: 
+  name: MyString
+  knee_location: MyString
+  surgery_type: MyString
+  knee_brand: MyString
+  knee_brand_type: MyString
+  address1: MyString
+  address2: MyString
+  city: MyString
+  state: MyString
+  zipcode: 1
+  phone: 1
+  email: MyString

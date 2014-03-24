@@ -11,10 +11,44 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140324163226) do
+ActiveRecord::Schema.define(version: 20140324171721) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "patients", force: true do |t|
+    t.integer  "physician_id"
+    t.string   "name"
+    t.string   "knee_location"
+    t.string   "surgery_type"
+    t.string   "knee_company"
+    t.string   "knee_brand"
+    t.string   "address1"
+    t.string   "address2"
+    t.string   "city"
+    t.string   "state"
+    t.integer  "zipcode"
+    t.integer  "phone"
+    t.string   "email"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "patients", ["physician_id"], name: "index_patients_on_physician_id", using: :btree
+
+  create_table "physicians", force: true do |t|
+    t.string   "name"
+    t.string   "practice"
+    t.string   "address1"
+    t.string   "address2"
+    t.string   "city"
+    t.string   "state"
+    t.integer  "zipcode"
+    t.integer  "phone"
+    t.string   "email"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "questions", force: true do |t|
     t.string   "body"
@@ -23,6 +57,7 @@ ActiveRecord::Schema.define(version: 20140324163226) do
   end
 
   create_table "ratings", force: true do |t|
+    t.integer  "patient_id"
     t.integer  "survey_id"
     t.integer  "question_id"
     t.integer  "value"
@@ -30,6 +65,7 @@ ActiveRecord::Schema.define(version: 20140324163226) do
     t.datetime "updated_at"
   end
 
+  add_index "ratings", ["patient_id"], name: "index_ratings_on_patient_id", using: :btree
   add_index "ratings", ["question_id"], name: "index_ratings_on_question_id", using: :btree
   add_index "ratings", ["survey_id"], name: "index_ratings_on_survey_id", using: :btree
 
