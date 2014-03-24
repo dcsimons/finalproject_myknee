@@ -1,20 +1,25 @@
 class PhysiciansController < ApplicationController
-  before_filter :intercept_html_requests
-  layout false
-  respond_to :json
   before_action :set_physician, only: [:show, :edit, :update, :destroy]
 
   # GET /physicians
   # GET /physicians.json
   def index
     @physicians = Physician.all
-    render json: @physicians
+    respond_to do |f|
+      f.html { render :index, layout: false }
+      f.json { render json: @physicians }
+    end
   end
 
   # GET /physicians/1
   # GET /physicians/1.json
   def show
-    render json: @physician
+    id = params[:id]
+    @physician = Physician.find(id)
+    respond_to do |f|
+      f.html { render :show, layout: false }
+      f.json { render json: @physician }
+    end
   end
 
   # POST /physicians

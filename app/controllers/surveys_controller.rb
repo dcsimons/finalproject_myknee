@@ -1,20 +1,25 @@
 class SurveysController < ApplicationController
-  before_filter :intercept_html_requests
-  layout false
-  respond_to :json
   before_action :set_survey, only: [:show, :edit, :update, :destroy]
 
   # GET /surveys
   # GET /surveys.json
   def index
     @surveys = Survey.all
-    render json: @surveys
+    respond_to do |f|
+      f.html { render :index, layout: false }
+      f.json { render json: @surveys }
+    end
   end
 
   # GET /surveys/1
   # GET /surveys/1.json
   def show
-    render json: @survey
+    id = params[:id]
+    @survey = Survey.find(id)
+    respond_to do |f|
+      f.html { render :show, layout: false }
+      f.json { render json: @survey }
+    end
   end
 
   # POST /surveys

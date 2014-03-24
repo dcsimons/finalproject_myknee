@@ -1,20 +1,25 @@
 class PatientsController < ApplicationController
-  before_filter :intercept_html_requests
-  layout false
-  respond_to :json
   before_action :set_patient, only: [:show, :edit, :update, :destroy]
 
   # GET /patients
   # GET /patients.json
   def index
     @patients = Patient.all
-    render json: @patients
+    respond_to do |f|
+      f.html { render :index, layout: false }
+      f.json { render json: @patients }
+    end
   end
 
   # GET /patients/1
   # GET /patients/1.json
   def show
-    render json: @patient
+    id = params[:id]
+    @patient = Patient.find(id)
+    respond_to do |f|
+      f.html { render :show, layout: false }
+      f.json { render json: @patient }
+    end
   end
 
   # POST /patients

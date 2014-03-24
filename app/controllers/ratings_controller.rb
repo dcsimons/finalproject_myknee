@@ -1,20 +1,25 @@
 class RatingsController < ApplicationController
-  before_filter :intercept_html_requests
-  layout false
-  respond_to :json
   before_action :set_rating, only: [:show, :edit, :update, :destroy]
 
   # GET /ratings
   # GET /ratings.json
   def index
     @ratings = Rating.all
-    render json: @ratings
+    respond_to do |f|
+      f.html { render :index, layout: false }
+      f.json { render json: @ratings }
+    end
   end
 
   # GET /ratings/1
   # GET /ratings/1.json
   def show
-    render json: @rating
+    id = params[:id]
+    @rating = Rating.find(id)
+    respond_to do |f|
+      f.html { render :show, layout: false }
+      f.json { render json: @rating }
+    end
   end
 
   # POST /ratings

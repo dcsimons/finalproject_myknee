@@ -1,20 +1,25 @@
 class QuestionsController < ApplicationController
-  before_filter :intercept_html_requests
-  layout false
-  respond_to :json
   before_action :set_question, only: [:show, :edit, :update, :destroy]
 
   # GET /questions
   # GET /questions.json
   def index
     @questions = Question.all
-    render json: @questions
+    respond_to do |f|
+      f.html { render :index, layout: false }
+      f.json { render json: @questions }
+    end
   end
 
   # GET /questions/1
   # GET /questions/1.json
   def show
-    render json: @question
+    id = params[:id]
+    @question = Question.find(id)
+    respond_to do |f|
+      f.html { render :show, layout: false }
+      f.json { render json: @question }
+    end
   end
 
   # POST /questions
