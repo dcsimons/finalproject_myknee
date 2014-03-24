@@ -9,7 +9,7 @@
 d1 = Physician.create(name: "Dr. Gregory House", practice: "House Orthopaedics")
 d2 = Physician.create(name: "Dr. James Andrews", practice: "Andrews Orthopaedics")
 d3 = Physician.create(name: "Dr. Emmett Brown", practice: "Brown Orthopaedics")
-d4 = Physician.create(name: "Dr. Archibald Graham", practice: "Williams Orthopaedics")
+d4 = Physician.create(name: "Dr. Archibald Graham", practice: "Graham Orthopaedics")
 d5 = Physician.create(name: "Dr. Patch Adams", practice: "Adams Orthopaedics")
 
 p1 = Patient.create(name: "Walter White", knee_location: "Right", surgery_type: "Total Knee Replacement")
@@ -36,17 +36,30 @@ q4 = Question.create(body: "What is the level of endurance when you walk?")
 q5 = Question.create(body: "What is the level of difficulty to walk without a crutch or cane?")
 q6 = Question.create(body: "What is the level of endurance when you walk without a crutch or cane?")
 
-d1.patients << [p1, p2]
-d2.patients << [p3, p4]
-d3.patients << [p5, p6]
-d4.patients << [p7, p8]
-d5.patients << [p9, p10]
+r1 = Rating.create(value: "1")
+r2 = Rating.create(value: "2")
+r3 = Rating.create(value: "3")
+r4 = Rating.create(value: "4")
+r5 = Rating.create(value: "5")
+
+q1.ratings << r3
+q2.ratings << r5
+q3.ratings << r4
+q4.ratings << r2
+q5.ratings << r1
+q6.ratings << r4
 
 s1.questions << [q1, q2, q3, q4, q5, q6]
 s2.questions << [q1, q2, q3, q4, q5, q6]
 s3.questions << [q1, q2, q3, q4, q5, q6]
 s4.questions << [q1, q2, q3, q4, q5, q6]
 s5.questions << [q1, q2, q3, q4, q5, q6]
+
+d1.patients << [p1, p2]
+d2.patients << [p3, p4]
+d3.patients << [p5, p6]
+d4.patients << [p7, p8]
+d5.patients << [p9, p10]
 
 p1.surveys << [s1, s2, s3, s4, s5]
 p2.surveys << [s1, s2, s3, s4, s5]

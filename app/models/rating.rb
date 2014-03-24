@@ -1,5 +1,4 @@
 class Rating < ActiveRecord::Base
-  belongs_to :survey
-  belongs_to :question
-  belongs_to :patient
+  has_many :questions_ratings
+  has_many :questions, through: :questions_ratings
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140324171721) do
+ActiveRecord::Schema.define(version: 20140324212659) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,16 @@ ActiveRecord::Schema.define(version: 20140324171721) do
 
   add_index "patients", ["physician_id"], name: "index_patients_on_physician_id", using: :btree
 
+  create_table "patients_surveys", force: true do |t|
+    t.integer  "patient_id"
+    t.integer  "survey_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "patients_surveys", ["patient_id"], name: "index_patients_surveys_on_patient_id", using: :btree
+  add_index "patients_surveys", ["survey_id"], name: "index_patients_surveys_on_survey_id", using: :btree
+
   create_table "physicians", force: true do |t|
     t.string   "name"
     t.string   "practice"
@@ -56,23 +66,36 @@ ActiveRecord::Schema.define(version: 20140324171721) do
     t.datetime "updated_at"
   end
 
-  create_table "ratings", force: true do |t|
-    t.integer  "patient_id"
-    t.integer  "survey_id"
+  create_table "questions_ratings", force: true do |t|
     t.integer  "question_id"
-    t.integer  "value"
+    t.integer  "rating_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "ratings", ["patient_id"], name: "index_ratings_on_patient_id", using: :btree
-  add_index "ratings", ["question_id"], name: "index_ratings_on_question_id", using: :btree
-  add_index "ratings", ["survey_id"], name: "index_ratings_on_survey_id", using: :btree
+  add_index "questions_ratings", ["question_id"], name: "index_questions_ratings_on_question_id", using: :btree
+  add_index "questions_ratings", ["rating_id"], name: "index_questions_ratings_on_rating_id", using: :btree
+
+  create_table "ratings", force: true do |t|
+    t.integer  "value"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "surveys", force: true do |t|
     t.string   "time_period"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "surveys_questions", force: true do |t|
+    t.integer  "survey_id"
+    t.integer  "question_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "surveys_questions", ["question_id"], name: "index_surveys_questions_on_question_id", using: :btree
+  add_index "surveys_questions", ["survey_id"], name: "index_surveys_questions_on_survey_id", using: :btree
 
 end
