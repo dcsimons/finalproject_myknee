@@ -14,9 +14,14 @@ myKneeControllers.controller("HomeController",
 
 )
 
-myKneeControllers.controller("PatientController", [ "$scope", "Patient"
-	($scope, Patient) ->
+myKneeControllers.controller("PatientController", [ "$scope", "$routeParams", "Patient", "Survey", "Question", "Rating",
+	($scope, $routeParams, Patient, Survey, Question, Rating) ->
 		$scope.patients = Patient.query()
+		$scope.patient = Patient.get
+			id: $routeParams.id
+		$scope.surveys = Survey.query
+			patient_id: $scope.patient.id
+		console.log $scope.surveys
 
 ])
 
