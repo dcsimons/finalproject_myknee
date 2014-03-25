@@ -1,6 +1,8 @@
 MyKnee::Application.routes.draw do
 
-  root to: "home#index"
+  get "/", to: "home#index"
+
+  get "/home", to: "home#show"
   
   resources :physicians, :except => [:new, :edit]
   resources :patients, :except => [:new, :edit] do

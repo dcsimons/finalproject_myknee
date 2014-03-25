@@ -1,9 +1,8 @@
 myKnee = angular.module("myKnee", [
   "ngRoute",
   "myKneeRouter",
-  "HomeController",
-  "PatientController",
-  "PhysicianController"
+  "myKneeControllers",
+  "myKneeServices"
 ])
 
 myKnee.config ["$httpProvider",
