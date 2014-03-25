@@ -1,0 +1,15 @@
+<div class="container" ng-controller="PatientController">
+	<h1>Physicians</h1>
+	<br />
+	<table>
+    <thead>
+      <td>Name</td>
+      <td>Practice</td>
+    </thead>
+    <tr ng-repeat="physician in physicians">
+      <td>{{physician.name}}</td>
+      <td>{{physician.practice}}</td>
+    </tr>
+  </table>
+
+</div>

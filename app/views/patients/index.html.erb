@@ -1,0 +1,17 @@
+<div class="container" ng-controller="PatientController">
+	<h1>Patients</h1>
+	<br />
+	<table>
+    <thead>
+      <td>Name</td>
+      <td>Knee Location</td>
+      <td>Surgery Type</td>
+    </thead>
+    <tr ng-repeat="patient in patients">
+      <td>{{patient.name}}</td>
+      <td>{{patient.knee_location}}</td>
+      <td>{{patient.surgery_type}}</td>
+    </tr>
+  </table>
+
+</div>
