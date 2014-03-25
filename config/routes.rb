@@ -2,7 +2,11 @@ MyKnee::Application.routes.draw do
 
   get "/", to: "home#index"
 
-  get "/home", to: "home#show"
+  get "/home", to: "templates#home"
+  get "/patients_index", to: "templates#patients_index"
+  get "/single_patient", to: "templates#single_patient"
+  get "/physicians_index", to: "templates#physicians_index"
+  get "/single_physician", to: "templates#single_physician"
   
   resources :physicians, :except => [:new, :edit]
   resources :patients, :except => [:new, :edit] do

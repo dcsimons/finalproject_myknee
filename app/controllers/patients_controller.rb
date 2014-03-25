@@ -5,10 +5,7 @@ class PatientsController < ApplicationController
   # GET /patients.json
   def index
     @patients = Patient.all
-    respond_to do |f|
-      f.html { render :index, layout: false }
-      f.json { render json: @patients }
-    end
+    render json: @patients
   end
 
   # GET /patients/1
@@ -16,10 +13,7 @@ class PatientsController < ApplicationController
   def show
     id = params[:id]
     @patient = Patient.find(id)
-    respond_to do |f|
-      f.html { render :show, layout: false }
-      f.json { render json: @patient }
-    end
+    render json: @patient
   end
 
   # POST /patients

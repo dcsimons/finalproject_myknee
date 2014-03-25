@@ -10,12 +10,12 @@ myKneeRouter.config([
 				templateUrl: "/home"
 				controller: "HomeController"
 			.when "/patients",
-				templateUrl: "/patients"
+				templateUrl: "/patients_index"
 				controller: "PatientController"
 			.when "/patients/:id",
-				templateUrl: "/patients/2"
+				templateUrl: "/single_patient"
 				controller: "PatientController"
 			.when "/physicians",
-				templateUrl: "/physicians"
+				templateUrl: "/physicians_index"
 				controller: "PhysicianController"
 ])

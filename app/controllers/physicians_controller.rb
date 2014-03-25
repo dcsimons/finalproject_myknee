@@ -5,10 +5,7 @@ class PhysiciansController < ApplicationController
   # GET /physicians.json
   def index
     @physicians = Physician.all
-    respond_to do |f|
-      f.html { render :index, layout: false }
-      f.json { render json: @physicians }
-    end
+    render json: @physicians
   end
 
   # GET /physicians/1
@@ -16,10 +13,7 @@ class PhysiciansController < ApplicationController
   def show
     id = params[:id]
     @physician = Physician.find(id)
-    respond_to do |f|
-      f.html { render :show, layout: false }
-      f.json { render json: @physician }
-    end
+    render json: @physician
   end
 
   # POST /physicians

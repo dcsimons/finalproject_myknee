@@ -19,9 +19,10 @@ myKneeControllers.controller("PatientController", [ "$scope", "$routeParams", "P
 		$scope.patients = Patient.query()
 		$scope.patient = Patient.get
 			id: $routeParams.id
+		
 		$scope.surveys = Survey.query
-			patient_id: $scope.patient.id
-		console.log $scope.surveys
+			patient_id: $routeParams.id
+
 
 ])
 
