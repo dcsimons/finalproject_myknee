@@ -54,8 +54,11 @@ myKneeControllers.controller("SurveyController", [ "$scope", "$routeParams", "Pa
 
 ])
 
-myKneeControllers.controller("PhysicianController", [ "$scope", "Physician"
-	($scope, Physician) ->
+myKneeControllers.controller("PhysicianController", [ "$scope", "$routeParams", "Physician", "Patient",
+	($scope, $routeParams, Physician, Patient) ->
+		$scope.physician_id = $routeParams.id
+
 		$scope.physicians = Physician.query()
+		$scope.physician = Physician.get id: $routeParams.id
 
 ])

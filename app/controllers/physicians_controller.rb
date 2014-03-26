@@ -13,7 +13,7 @@ class PhysiciansController < ApplicationController
   def show
     id = params[:id]
     @physician = Physician.find(id)
-    render json: @physician
+    render json: @physician, :include => :patients
   end
 
   # POST /physicians
