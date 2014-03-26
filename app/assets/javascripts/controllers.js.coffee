@@ -22,7 +22,6 @@ myKneeControllers.controller("PatientController", [ "$scope", "$routeParams", "P
 		$scope.patient = Patient.get id: $routeParams.id
 		
 		$scope.surveys = Survey.query patient_id: $routeParams.id
-		console.log $scope.surveys
 
 		# $scope.surveys.$promise.then (result) ->
 		# 	$scope.qandr_a = []

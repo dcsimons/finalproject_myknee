@@ -6,7 +6,7 @@ class SurveysController < ApplicationController
   def index
     patient = Patient.find(params[:patient_id])
     @surveys = patient.surveys
-    render json: @surveys
+    render json: @surveys, :include => [:questions => {:include => [:ratings]}]
   end
 
   # GET /surveys/1
@@ -14,7 +14,7 @@ class SurveysController < ApplicationController
   def show
     id = params[:id]
     @survey = Survey.find(id)
-    render json: @survey
+    render json: @survey, :include => [:questions => {:include => [:ratings]}]
   end
 
   # POST /surveys

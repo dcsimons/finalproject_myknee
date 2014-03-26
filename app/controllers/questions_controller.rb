@@ -7,7 +7,7 @@ class QuestionsController < ApplicationController
     patient = Patient.find(params[:patient_id])
     survey = patient.surveys.find(params[:survey_id])
     @questions = survey.questions
-    render json: @questions
+    render json: @questions, :include => :ratings
   end
 
   # GET /questions/1
@@ -15,7 +15,7 @@ class QuestionsController < ApplicationController
   def show
     id = params[:id]
     @question = Question.find(id)
-    render json: @question
+    render json: @question, :include => :ratings
   end
 
   # POST /questions
