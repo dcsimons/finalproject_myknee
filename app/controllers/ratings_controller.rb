@@ -4,11 +4,11 @@ class RatingsController < ApplicationController
   # GET /ratings
   # GET /ratings.json
   def index
-    @ratings = Rating.all
-    respond_to do |f|
-      f.html { render :index, layout: false }
-      f.json { render json: @ratings }
-    end
+    patient = Patient.find(params[:patient_id])
+    survey = patient.surveys.find(params[:survey_id])
+    question = survey.questions.find(params[:question_id])
+    @ratings = question.ratings
+    render json: @ratings
   end
 
   # GET /ratings/1
@@ -16,10 +16,7 @@ class RatingsController < ApplicationController
   def show
     id = params[:id]
     @rating = Rating.find(id)
-    respond_to do |f|
-      f.html { render :show, layout: false }
-      f.json { render json: @rating }
-    end
+    render json: @rating
   end
 
   # POST /ratings

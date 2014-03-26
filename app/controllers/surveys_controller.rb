@@ -4,11 +4,9 @@ class SurveysController < ApplicationController
   # GET /surveys
   # GET /surveys.json
   def index
-    @surveys = Survey.all
-    respond_to do |f|
-      f.html { render :index, layout: false }
-      f.json { render json: @surveys }
-    end
+    patient = Patient.find(params[:patient_id])
+    @surveys = patient.surveys
+    render json: @surveys
   end
 
   # GET /surveys/1
@@ -16,10 +14,7 @@ class SurveysController < ApplicationController
   def show
     id = params[:id]
     @survey = Survey.find(id)
-    respond_to do |f|
-      f.html { render :show, layout: false }
-      f.json { render json: @survey }
-    end
+    render json: @survey
   end
 
   # POST /surveys

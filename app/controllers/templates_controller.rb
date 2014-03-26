@@ -12,6 +12,10 @@ class TemplatesController < ApplicationController
 		render layout: false
 	end
 
+	def single_patient_survey
+		render layout: false
+	end
+
 	def physicians_index
 		render layout: false
 	end

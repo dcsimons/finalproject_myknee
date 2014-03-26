@@ -3,20 +3,15 @@
   <h2>{{patient.surgery_type}}</h2>
   <h2>{{patient.knee_location}} Knee</h2>
 	<br />
-	<table class="table" ng-repeat="survey in surveys">
+	<table class="table">
     <thead>
       <tr>
-        <td colspan="2"><h4>{{survey.time_period}}</h4></td>
-      </tr>
-      <tr>
-        <td><h5>Question</h5></td>
-        <td><h5>Rating</h5></td>
+        <td><h4>Surveys</h4></td>
       </tr>
     </thead>
     <tbody>
-      <tr ng-repeat="answer in qandr_a">
-        <td>{{answer["q"][$index]["body"]}}</td>
-        <td>{{answer["r"][$index]["value"]}}</td>
+      <tr  ng-repeat="survey in surveys">
+        <td><a href="/#/patients/{{patient_id}}/surveys/{{survey.id}}">{{survey.time_period}}</a></td>
       </tr>
     </tbody>
   </table>

@@ -1,0 +1,23 @@
+<div class="container" ng-controller="SurveyController">
+	<h1>{{patient.name}}</h1>
+  <h2>{{patient.surgery_type}}</h2>
+  <h2>{{patient.knee_location}} Knee</h2>
+	<br />
+	<table class="table">
+    <thead>
+      <tr>
+        <td colspan="2"><h4>{{survey.time_period}}</h4></td>
+      </tr>
+      <tr>
+        <td><h5>Question</h5></td>
+        <td><h5>Rating</h5></td>
+    </thead>
+    <tbody>
+      <tr  ng-repeat="question in questions">
+        <td>{{question.body}}</td>
+        <td>{{rating_value[$index][0].value}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
