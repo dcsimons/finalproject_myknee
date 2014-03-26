@@ -5,7 +5,7 @@ class PatientsController < ApplicationController
   # GET /patients.json
   def index
     @patients = Patient.all
-    render json: @patients, :include => [:surveys => {:include => [:questions => {:include => [:ratings]}]}]
+    render json: @patients, :include => :surveys
   end
 
   # GET /patients/1
@@ -13,7 +13,7 @@ class PatientsController < ApplicationController
   def show
     id = params[:id]
     @patient = Patient.find(id)
-    render json: @patient, :include => [:surveys => {:include => [:questions => {:include => [:ratings]}]}]
+    render json: @patient, :include => :surveys
   end
 
   # POST /patients
