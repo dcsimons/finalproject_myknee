@@ -22,13 +22,14 @@ ActiveRecord::Schema.define(version: 20140324212659) do
     t.string   "knee_location"
     t.string   "surgery_type"
     t.string   "knee_company"
+    t.string   "knee_company_img"
     t.string   "knee_brand"
     t.string   "address1"
     t.string   "address2"
     t.string   "city"
     t.string   "state"
     t.integer  "zipcode"
-    t.integer  "phone"
+    t.string   "phone"
     t.string   "email"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -54,7 +55,7 @@ ActiveRecord::Schema.define(version: 20140324212659) do
     t.string   "city"
     t.string   "state"
     t.integer  "zipcode"
-    t.integer  "phone"
+    t.string   "phone"
     t.string   "email"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -84,6 +85,7 @@ ActiveRecord::Schema.define(version: 20140324212659) do
 
   create_table "surveys", force: true do |t|
     t.string   "time_period"
+    t.string   "status"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

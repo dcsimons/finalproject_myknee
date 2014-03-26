@@ -7,11 +7,13 @@
     <thead>
       <tr>
         <td><h4>Surveys</h4></td>
+        <td><h4>Status</h4></td>
       </tr>
     </thead>
     <tbody>
       <tr  ng-repeat="survey in surveys">
         <td><a href="/#/patients/{{patient_id}}/surveys/{{survey.id}}">{{survey.time_period}}</a></td>
+        <td>{{survey.status}}</td>
       </tr>
     </tbody>
   </table>

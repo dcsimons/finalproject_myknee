@@ -44,11 +44,11 @@ myKneeControllers.controller("SurveyController", [ "$scope", "$routeParams", "Pa
 
 		$scope.questions = Question.query patient_id: $routeParams.patient_id, survey_id: $routeParams.id
 
-		$scope.questions.$promise.then (result) ->
-			$scope.rating_value = []
-			angular.forEach result,  (question, index) ->
-				value = Rating.query patient_id: $routeParams.patient_id, survey_id: $routeParams.id, question_id: question.id
-				$scope.rating_value.push value
+		# $scope.questions.$promise.then (result) ->
+		# 	$scope.rating_value = []
+		# 	angular.forEach result,  (question, index) ->
+		# 		value = Rating.query patient_id: $routeParams.patient_id, survey_id: $routeParams.id, question_id: question.id
+		# 		$scope.rating_value.push value
 			
 
 ])

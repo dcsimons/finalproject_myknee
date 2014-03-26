@@ -6,13 +6,14 @@ class CreatePatients < ActiveRecord::Migration
       t.string :knee_location
       t.string :surgery_type
       t.string :knee_company
+      t.string :knee_company_img
       t.string :knee_brand
       t.string :address1
       t.string :address2
       t.string :city
       t.string :state
       t.integer :zipcode
-      t.integer :phone
+      t.string :phone
       t.string :email
 
       t.timestamps
