@@ -16,11 +16,7 @@ MyKnee::Application.routes.draw do
   
   resources :physicians, :except => [:new, :edit]
   resources :patients, :except => [:new, :edit] do
-    resources :one_surveys, :except => [:new, :edit]
-    resources :two_surveys, :except => [:new, :edit]
-    resources :three_surveys, :except => [:new, :edit]
-    resources :four_surveys, :except => [:new, :edit]
-    resources :five_surveys, :except => [:new, :edit]
+    resources :surveys, :except => [:new, :edit]
   end
 
 end

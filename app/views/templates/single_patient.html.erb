@@ -12,7 +12,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr  ng-repeat="survey in surveys">
+      <tr  ng-repeat="survey in patient.surveys">
         <td><a href="/#/patients/{{patient_id}}/surveys/{{survey.id}}">{{survey.time_period}}</a></td>
         <td>{{survey.status}}</td>
         <td ng-show="survey_status[$index].take"><a href="/#/patients/{{patient_id}}/surveys/{{survey.id}}/take_survey"><button class="btn btn-success">Take Survey</button></td>

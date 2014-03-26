@@ -14,7 +14,7 @@ myKneeControllers.controller("HomeController",
 
 )
 
-myKneeControllers.controller("PatientController", [ "$scope", "$routeParams", "Patient", "Survey", "Question", "Rating",
+myKneeControllers.controller("PatientController", [ "$scope", "$routeParams", "Patient", "Survey",
 	($scope, $routeParams, Patient, Survey, Question, Rating) ->
 		$scope.patient_id = $routeParams.id
 
@@ -35,10 +35,11 @@ myKneeControllers.controller("PatientController", [ "$scope", "$routeParams", "P
 						update: false
 						take: true
 				$scope.survey_status.push value
+				console.log $scope.survey_status
 
 ])
 
-myKneeControllers.controller("SurveyController", [ "$scope", "$routeParams", "Patient", "Survey", "Question", "Rating",
+myKneeControllers.controller("SurveyController", [ "$scope", "$routeParams", "Patient", "Survey",
 	($scope, $routeParams, Patient, Survey, Question, Rating) ->
 		$scope.patients = Patient.query()
 		$scope.patient = Patient.get id: $routeParams.patient_id
@@ -73,7 +74,7 @@ myKneeControllers.controller("SurveyController", [ "$scope", "$routeParams", "Pa
 		$scope.selectRating = (checkbox) ->
 			checkbox.clicked = true
 			checkbox.img_url = "app/assets/images/green_checkmark.png"
-		
+
 		# $scope.questions.$promise.then (result) ->
 		# 	$scope.rating_value = []
 		# 	angular.forEach result,  (question, index) ->
