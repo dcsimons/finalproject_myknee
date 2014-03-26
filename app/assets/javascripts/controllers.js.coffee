@@ -48,6 +48,32 @@ myKneeControllers.controller("SurveyController", [ "$scope", "$routeParams", "Pa
 
 		$scope.questions = Question.query patient_id: $routeParams.patient_id, survey_id: $routeParams.id
 
+		$scope.question_checkbox = [
+				value: 1
+				clicked: false
+				img_url: null
+			,
+				value: 2
+				clicked: false
+				img_url: null
+			,
+				value: 3
+				clicked: false
+				img_url: null
+			,
+				value: 4
+				clicked: false
+				img_url: null
+			,
+				value: 5
+				clicked: false
+				img_url: null
+		]
+
+		$scope.selectRating = (checkbox) ->
+			checkbox.clicked = true
+			checkbox.img_url = "app/assets/images/green_checkmark.png"
+		
 		# $scope.questions.$promise.then (result) ->
 		# 	$scope.rating_value = []
 		# 	angular.forEach result,  (question, index) ->
