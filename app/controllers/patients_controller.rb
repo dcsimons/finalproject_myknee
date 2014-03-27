@@ -30,6 +30,7 @@ class PatientsController < ApplicationController
     elsif company == "Zimmer"
       @patient.knee_company_img = "app/assets/images/zimmer_logo.png"
     end
+    @patient.save
 
     @patient.surveys.create(time_period: "1 Month", status: "OPEN")
     @patient.surveys.create(time_period: "3 Months", status: "OPEN")

@@ -66,19 +66,9 @@ myKneeControllers.controller("SurveyController", [ "$scope", "$routeParams", "Pa
 			sixth: "What is the level of endurance when you walk without a crutch or cane?"
 
 		$scope.updateSurvey = ->
-			$q1_rating = $scope.survey.q1_rating
-			$q2_rating = $scope.survey.q2_rating
-			$q3_rating = $scope.survey.q3_rating
-			$q4_rating = $scope.survey.q4_rating
-			$q5_rating = $scope.survey.q5_rating
-			$q6_rating = $scope.survey.q6_rating
+			$scope.survey.status = "COMPLETED"
 			Survey.update
-					q1_rating: $q1_rating
-					q2_rating: $q2_rating
-					q3_rating: $q3_rating
-					q4_rating: $q4_rating
-					q5_rating: $q5_rating
-					q6_rating: $q6_rating
+					id: $scope.survey.id
 				,
 					$scope.survey
 
@@ -94,9 +84,8 @@ myKneeControllers.controller("PhysicianController", [ "$scope", "$routeParams", 
 				$scope.physician_patients = data.patients
 
 		$scope.createNewPatient = ->
-			new_patient = Patient.save $scope.patient,
+			Patient.save $scope.patient,
 				(data) ->
 					console.log data
-					$scope.physician_patients.push data
 
 ])

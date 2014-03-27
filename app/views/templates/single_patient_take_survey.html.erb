@@ -1,0 +1,75 @@
+<div ng-controller="SurveyController">
+	<h1>{{patient.name}}</h1>
+  <h2>{{patient.surgery_type}}</h2>
+  <h2>{{patient.knee_location}} Knee</h2>
+	<br />
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <td><h4>{{survey.time_period}} Survey</h4></td>
+        <td colspan="5" class="tbl-center"><h4>Rating (1-Low to 5-High)</h4></td>
+      </tr>
+      <tr>
+        <td><h5>Question</h5></td>
+        <td class="tbl-center"><h5>1</h5></td>
+        <td class="tbl-center"><h5>2</h5></td>
+        <td class="tbl-center"><h5>3</h5></td>
+        <td class="tbl-center"><h5>4</h5></td>
+        <td class="tbl-center"><h5>5</h5></td>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{questions.first}}</td>
+        <td class="tbl-center"><input type="radio" ng-model="survey.q1_rating" value="1" /></td>
+        <td class="tbl-center"><input type="radio" ng-model="survey.q1_rating" value="2" /></td>
+        <td class="tbl-center"><input type="radio" ng-model="survey.q1_rating" value="3" /></td>
+        <td class="tbl-center"><input type="radio" ng-model="survey.q1_rating" value="4" /></td>
+        <td class="tbl-center"><input type="radio" ng-model="survey.q1_rating" value="5" /></td>
+      </tr>
+      <tr>
+        <td>{{questions.second}}</td>
+        <td class="tbl-center"><input type="radio" ng-model="survey.q2_rating" value="1" /></td>
+        <td class="tbl-center"><input type="radio" ng-model="survey.q2_rating" value="2" /></td>
+        <td class="tbl-center"><input type="radio" ng-model="survey.q2_rating" value="3" /></td>
+        <td class="tbl-center"><input type="radio" ng-model="survey.q2_rating" value="4" /></td>
+        <td class="tbl-center"><input type="radio" ng-model="survey.q2_rating" value="5" /></td>
+      </tr>
+      <tr>
+        <td>{{questions.third}}</td>
+        <td class="tbl-center"><input type="radio" ng-model="survey.q3_rating" value="1" /></td>
+        <td class="tbl-center"><input type="radio" ng-model="survey.q3_rating" value="2" /></td>
+        <td class="tbl-center"><input type="radio" ng-model="survey.q3_rating" value="3" /></td>
+        <td class="tbl-center"><input type="radio" ng-model="survey.q3_rating" value="4" /></td>
+        <td class="tbl-center"><input type="radio" ng-model="survey.q3_rating" value="5" /></td>
+      </tr>
+      <tr>
+        <td>{{questions.fourth}}</td>
+        <td class="tbl-center"><input type="radio" ng-model="survey.q4_rating" value="1" /></td>
+        <td class="tbl-center"><input type="radio" ng-model="survey.q4_rating" value="2" /></td>
+        <td class="tbl-center"><input type="radio" ng-model="survey.q4_rating" value="3" /></td>
+        <td class="tbl-center"><input type="radio" ng-model="survey.q4_rating" value="4" /></td>
+        <td class="tbl-center"><input type="radio" ng-model="survey.q4_rating" value="5" /></td>
+      </tr>
+      <tr>
+        <td>{{questions.fifth}}</td>
+        <td class="tbl-center"><input type="radio" ng-model="survey.q5_rating" value="1" /></td>
+        <td class="tbl-center"><input type="radio" ng-model="survey.q5_rating" value="2" /></td>
+        <td class="tbl-center"><input type="radio" ng-model="survey.q5_rating" value="3" /></td>
+        <td class="tbl-center"><input type="radio" ng-model="survey.q5_rating" value="4" /></td>
+        <td class="tbl-center"><input type="radio" ng-model="survey.q5_rating" value="5" /></td>
+      </tr>
+      <tr>
+        <td>{{questions.sixth}}</td>
+        <td class="tbl-center"><input type="radio" ng-model="survey.q6_rating" value="1" /></td>
+        <td class="tbl-center"><input type="radio" ng-model="survey.q6_rating" value="2" /></td>
+        <td class="tbl-center"><input type="radio" ng-model="survey.q6_rating" value="3" /></td>
+        <td class="tbl-center"><input type="radio" ng-model="survey.q6_rating" value="4" /></td>
+        <td class="tbl-center"><input type="radio" ng-model="survey.q6_rating" value="5" /></td>
+      </tr>  
+    </tbody>
+  </table>
+  <a href="/#/patients/{{patient.id}}/surveys/{{survey.id}}">
+    <button class="btn btn-success btn-right" ng-click="updateSurvey()">Submit Survey</button>
+  </a>
+
+</div>
