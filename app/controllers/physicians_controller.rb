@@ -5,7 +5,7 @@ class PhysiciansController < ApplicationController
   # GET /physicians.json
   def index
     @physicians = Physician.all
-    render json: @physicians
+    render json: @physicians, :include => [:patients => {:include => [:surveys]}]
   end
 
   # GET /physicians/1
@@ -13,7 +13,7 @@ class PhysiciansController < ApplicationController
   def show
     id = params[:id]
     @physician = Physician.find(id)
-    render json: @physician, :include => :patients
+    render json: @physician, :include => [:patients => {:include => [:surveys]}]
   end
 
   # POST /physicians
