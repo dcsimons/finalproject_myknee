@@ -3,21 +3,32 @@
   <h2>{{patient.surgery_type}}</h2>
   <h2>{{patient.knee_location}} Knee</h2>
 	<br />
-	<table class="table">
+  <a href="/#/patients/{{patient.id}}">
+    <button class="btn btn-primary btn-right">Patient Home</button>
+  </a>
+	<table class="table table-striped">
     <thead>
       <tr>
-        <td colspan="2"><h4>{{survey.time_period}}</h4></td>
+        <td colspan="2"><h4>{{survey.time_period}} Survey</h4></td>
       </tr>
       <tr>
         <td><h5>Question</h5></td>
-        <td><h5>Rating</h5></td>
+        <td class="tbl-center"><h5>Rating</h5></td>
     </thead>
     <tbody>
-      <tr  ng-repeat="question in questions">
-        <td>{{question.body}}</td>
-        <td>{{question.ratings[0].value}}</td>
-      </tr>
+      <tr><td>{{questions.first}}</td><td class="tbl-center">{{survey.q1_rating}}</td></tr>
+      <tr><td>{{questions.second}}</td><td class="tbl-center">{{survey.q2_rating}}</td></tr>
+      <tr><td>{{questions.third}}</td><td class="tbl-center">{{survey.q3_rating}}</td></tr>
+      <tr><td>{{questions.fourth}}</td><td class="tbl-center">{{survey.q4_rating}}</td></tr>
+      <tr><td>{{questions.fifth}}</td><td class="tbl-center">{{survey.q5_rating}}</td></tr>
+      <tr><td>{{questions.sixth}}</td><td class="tbl-center">{{survey.q6_rating}}</td></tr>
     </tbody>
   </table>
+  <a href="/#/patients/{{patient.id}}/surveys/{{survey.id}}/take_survey">
+    <button class="btn btn-success btn-right" ng-show="survey_status.take">Take Survey</button>
+  </a>
+  <a href="/#/patients/{{patient.id}}/surveys/{{survey.id}}/update_survey">
+    <button class="btn btn-warning btn-right" ng-show="survey_status.update">Update Survey</button>
+  </a>
 
 </div>

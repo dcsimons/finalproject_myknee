@@ -35,7 +35,6 @@ myKneeControllers.controller("PatientController", [ "$scope", "$routeParams", "P
 						update: false
 						take: true
 				$scope.survey_status.push value
-				console.log $scope.survey_status
 
 ])
 
@@ -47,40 +46,41 @@ myKneeControllers.controller("SurveyController", [ "$scope", "$routeParams", "Pa
 		$scope.surveys = Survey.query patient_id: $routeParams.patient_id
 		$scope.survey = Survey.get patient_id: $routeParams.patient_id, id: $routeParams.id
 
-		$scope.questions = Question.query patient_id: $routeParams.patient_id, survey_id: $routeParams.id
+		$scope.survey.$promise.then (result) ->
+			if result.status is "COMPLETED"
+				value = 
+					update: true
+					take: false
+			else
+				value = 
+					update: false
+					take: true
+			$scope.survey_status = value
 
-		$scope.question_checkbox = [
-				value: 1
-				clicked: false
-				img_url: null
-			,
-				value: 2
-				clicked: false
-				img_url: null
-			,
-				value: 3
-				clicked: false
-				img_url: null
-			,
-				value: 4
-				clicked: false
-				img_url: null
-			,
-				value: 5
-				clicked: false
-				img_url: null
-		]
+		$scope.questions =
+			first: "What is the level of pain in your knee?"
+			second: "What is the level of difficulty to walk?"
+			third: "What is the level of difficulty to walk up and down stairs?"
+			fourth: "What is the level of endurance when you walk?"
+			fifth: "What is the level of difficulty to walk without a crutch or cane?"
+			sixth: "What is the level of endurance when you walk without a crutch or cane?"
 
-		$scope.selectRating = (checkbox) ->
-			checkbox.clicked = true
-			checkbox.img_url = "app/assets/images/green_checkmark.png"
-
-		# $scope.questions.$promise.then (result) ->
-		# 	$scope.rating_value = []
-		# 	angular.forEach result,  (question, index) ->
-		# 		value = Rating.query patient_id: $routeParams.patient_id, survey_id: $routeParams.id, question_id: question.id
-		# 		$scope.rating_value.push value
-			
+		$scope.updateSurvey = ->
+			$q1_rating = $scope.survey.q1_rating
+			$q2_rating = $scope.survey.q2_rating
+			$q3_rating = $scope.survey.q3_rating
+			$q4_rating = $scope.survey.q4_rating
+			$q5_rating = $scope.survey.q5_rating
+			$q6_rating = $scope.survey.q6_rating
+			Survey.update
+					q1_rating: $q1_rating
+					q2_rating: $q2_rating
+					q3_rating: $q3_rating
+					q4_rating: $q4_rating
+					q5_rating: $q5_rating
+					q6_rating: $q6_rating
+				,
+					$scope.survey
 
 ])
 
