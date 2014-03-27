@@ -82,7 +82,7 @@ p2 = Patient.create(
 	knee_location: "Left", 
 	surgery_type: "Partial Knee Replacement",
 	knee_company: "Biomet",
-	knee_company_img: "app/assets/images/bioment_logo.png",
+	knee_company_img: "app/assets/images/biomet_logo.png",
 	knee_brand: "Vanguard",
 	address1: "1000 Main Street",
 	address2: "APT 100",

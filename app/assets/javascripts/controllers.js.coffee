@@ -91,4 +91,7 @@ myKneeControllers.controller("PhysicianController", [ "$scope", "$routeParams", 
 		$scope.physicians = Physician.query()
 		$scope.physician = Physician.get id: $routeParams.id
 
+		$scope.createNewPatient = ->
+			Patient.save($scope.patient)
+
 ])

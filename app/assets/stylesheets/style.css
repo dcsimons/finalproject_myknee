@@ -6,3 +6,25 @@
 	float: right;
 	margin-right: 20px;
 }
+
+.input-field {
+  display: inline-block;
+  width: 280px;
+  height: 35px;
+  padding: 8px;
+  margin-top: 10px;
+  border: 1px solid gray;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.dropdown-field {
+  display: inline-block;
+  width: 280px;
+  height: 35px;
+  padding: 8px;
+  margin-top: 10px;
+  border: 1px solid gray;
+  border-radius: 4px;
+  font-size: 12px;
+}

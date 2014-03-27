@@ -37,4 +37,8 @@ myKneeRouter.config([
 			.when "/physicians/:id",
 				templateUrl: "/single_physician"
 				controller: "PhysicianController"
+
+			.when "/physicians/:id/new_patient",
+				templateUrl: "/single_physician_new_patient"
+				controller: "PhysicianController"
 ])

@@ -2,7 +2,10 @@
 	<h1>{{physician.practice}}</h1>
   <h2>{{physician.name}}</h2>
 	<br />
-	<table class="table">
+	<a href="/#/physicians/{{physician.id}}/new_patient">
+    <button class="btn btn-primary btn-right">Create New Patient</button>
+  </a>
+  <table class="table">
     <thead>
       <tr>
         <td colspan="3"><h3>Patients</h3></td>
