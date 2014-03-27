@@ -5,7 +5,7 @@ class PatientsController < ApplicationController
   # GET /patients.json
   def index
     @patients = Patient.all
-    render json: @patients, :include => [:surveys => {:include => [:questions => {:include => [:ratings]}]}]
+    render json: @patients, :include => :surveys
   end
 
   # GET /patients/1
@@ -13,13 +13,19 @@ class PatientsController < ApplicationController
   def show
     id = params[:id]
     @patient = Patient.find(id)
-    render json: @patient, :include => [:surveys => {:include => [:questions => {:include => [:ratings]}]}]
+    render json: @patient, :include => :surveys
   end
 
   # POST /patients
   # POST /patients.json
   def create
     @patient = Patient.new(patient_params)
+    @patient.surveys.create(time_period: "1 Month", status: "OPEN")
+    @patient.surveys.create(time_period: "3 Months", status: "OPEN")
+    @patient.surveys.create(time_period: "6 Months", status: "OPEN")
+    @patient.surveys.create(time_period: "9 Months", status: "OPEN")
+    @patient.surveys.create(time_period: "12 Months", status: "OPEN")
+
 
     if @patient.save
       render json: @patient, status: :created
@@ -31,7 +37,7 @@ class PatientsController < ApplicationController
   # PATCH/PUT /patients/1
   # PATCH/PUT /patients/1.json
   def update
-    if @patient.update(survey_params)
+    if @patient.update(patient_params)
       head :no_content
     else
       render json: @patient.errors, status: :unprocessable_entity

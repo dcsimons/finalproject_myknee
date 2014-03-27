@@ -1,8 +1,8 @@
-.questionBox > img {
-	width: 20px;
-	height: 20px;
-}
-
 .tbl-center {
 	text-align: center;
+}
+
+.btn-right {
+	float: right;
+	margin-right: 20px;
 }

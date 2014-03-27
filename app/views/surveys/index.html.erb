@@ -1,0 +1,41 @@
+<h1>Listing surveys</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Patient</th>
+      <th>Time period</th>
+      <th>Q1 rating</th>
+      <th>Q2 rating</th>
+      <th>Q3 rating</th>
+      <th>Q4 rating</th>
+      <th>Q5 rating</th>
+      <th>Q6 rating</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @surveys.each do |survey| %>
+      <tr>
+        <td><%= survey.patient %></td>
+        <td><%= survey.time_period %></td>
+        <td><%= survey.q1_rating %></td>
+        <td><%= survey.q2_rating %></td>
+        <td><%= survey.q3_rating %></td>
+        <td><%= survey.q4_rating %></td>
+        <td><%= survey.q5_rating %></td>
+        <td><%= survey.q6_rating %></td>
+        <td><%= link_to 'Show', survey %></td>
+        <td><%= link_to 'Edit', edit_survey_path(survey) %></td>
+        <td><%= link_to 'Destroy', survey, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Survey', new_survey_path %>

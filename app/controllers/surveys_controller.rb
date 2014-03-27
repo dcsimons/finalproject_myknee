@@ -6,7 +6,7 @@ class SurveysController < ApplicationController
   def index
     patient = Patient.find(params[:patient_id])
     @surveys = patient.surveys
-    render json: @surveys, :include => [:questions => {:include => [:ratings]}]
+    render json: @surveys
   end
 
   # GET /surveys/1
@@ -14,7 +14,7 @@ class SurveysController < ApplicationController
   def show
     id = params[:id]
     @survey = Survey.find(id)
-    render json: @survey, :include => [:questions => {:include => [:ratings]}]
+    render json: @survey
   end
 
   # POST /surveys
@@ -55,6 +55,6 @@ class SurveysController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def survey_params
-      params.require(:survey).permit(:surgery_type, :time_period)
+      params.require(:survey).permit(:patient_id, :time_period, :q1_rating, :q2_rating, :q3_rating, :q4_rating, :q5_rating, :q6_rating)
     end
 end

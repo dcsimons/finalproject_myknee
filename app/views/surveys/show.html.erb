@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Patient:</strong>
+  <%= @survey.patient %>
+</p>
+
+<p>
+  <strong>Time period:</strong>
+  <%= @survey.time_period %>
+</p>
+
+<p>
+  <strong>Q1 rating:</strong>
+  <%= @survey.q1_rating %>
+</p>
+
+<p>
+  <strong>Q2 rating:</strong>
+  <%= @survey.q2_rating %>
+</p>
+
+<p>
+  <strong>Q3 rating:</strong>
+  <%= @survey.q3_rating %>
+</p>
+
+<p>
+  <strong>Q4 rating:</strong>
+  <%= @survey.q4_rating %>
+</p>
+
+<p>
+  <strong>Q5 rating:</strong>
+  <%= @survey.q5_rating %>
+</p>
+
+<p>
+  <strong>Q6 rating:</strong>
+  <%= @survey.q6_rating %>
+</p>
+
+<%= link_to 'Edit', edit_survey_path(@survey) %> |
+<%= link_to 'Back', surveys_path %>

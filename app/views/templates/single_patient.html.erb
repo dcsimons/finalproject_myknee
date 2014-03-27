@@ -7,16 +7,24 @@
     <thead>
       <tr>
         <td><h4>Surveys</h4></td>
-        <td><h4>Status</h4></td>
-        <td></td>
+        <td class="tbl-center"><h4>Status</h4></td>
+        <td class="tbl-center"></td>
       </tr>
     </thead>
     <tbody>
-      <tr  ng-repeat="survey in surveys">
+      <tr  ng-repeat="survey in patient.surveys">
         <td><a href="/#/patients/{{patient_id}}/surveys/{{survey.id}}">{{survey.time_period}}</a></td>
-        <td>{{survey.status}}</td>
-        <td ng-show="survey_status[$index].take"><a href="/#/patients/{{patient_id}}/surveys/{{survey.id}}/take_survey"><button class="btn btn-success">Take Survey</button></td>
-        <td ng-show="survey_status[$index].update"><a href="/#/patients/{{patient_id}}/surveys/{{survey.id}}/update_survey"><button class="btn btn-warning">Update Survey</button></td>
+        <td class="tbl-center">{{survey.status}}</td>
+        <td  class="tbl-center" ng-show="survey_status[$index].take">
+          <a href="/#/patients/{{patient_id}}/surveys/{{survey.id}}/take_survey">
+            <button class="btn btn-success">Take Survey</button>
+          </a>
+        </td>
+        <td class="tbl-center" ng-show="survey_status[$index].update">
+          <a href="/#/patients/{{patient_id}}/surveys/{{survey.id}}/update_survey">
+            <button class="btn btn-warning">Update Survey</button>
+          </a>
+        </td>
       </tr>
     </tbody>
   </table>
