@@ -19,7 +19,10 @@ class PatientsController < ApplicationController
   # POST /patients
   # POST /patients.json
   def create
-    @patient = Patient.new(patient_params)
+    phys_id = patient_params[:physician_id]
+    physician = Physician.find(phys_id)
+
+    @patient = physician.patients.new(patient_params)
     company = patient_params[:knee_company]
     if company == "Biomet"
       @patient.knee_company_img = "app/assets/images/biomet_logo.png"

@@ -84,8 +84,7 @@ myKneeControllers.controller("PhysicianController", [ "$scope", "$routeParams", 
 				$scope.physician_patients = data.patients
 
 		$scope.createNewPatient = ->
-			Patient.save $scope.patient,
-				(data) ->
-					console.log data
+			$scope.patient.physician_id = $scope.physician.id
+			Patient.save $scope.patient
 
 ])
