@@ -1,11 +1,28 @@
 <div ng-controller="PatientController">
-	<h1>{{patient.name}}</h1>
-  <h2>{{patient.surgery_type}}</h2>
-  <h2>{{patient.knee_location}} Knee</h2>
+	<div class="patient-div">
+    <h1>{{patient.name}}</h1>
+    <h4>
+      {{patient.address1}}<br />
+      {{patient.address2}}<br />
+      {{patient.city}}, {{patient.state}} {{patient.zipcode}}<br />
+      {{patient.email}}
+    </h4>
+  </div>
+  <div class="surgery-div">
+    <h2>{{patient.surgery_type}}</h2>
+    <img src={{patient.knee_company_img}} />
+    <h3>{{patient.knee_brand}}</h3>
+    <h3>{{patient.knee_location}} Knee</h3>
+  </div>
 	<br />
-	<table class="table">
+	<table class="table single-patient-tbl">
+    <colgroup>
+      <col class="col-sm-4" />
+      <col class="col-sm-4" />
+      <col class="col-sm-4" />
+    </colgroup>
     <thead>
-      <tr>
+      <tr class="single-patient-tbl-header">
         <td><h4>Surveys</h4></td>
         <td class="tbl-center"><h4>Status</h4></td>
         <td class="tbl-center"></td>

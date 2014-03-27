@@ -5,10 +5,10 @@ myKneeControllers.controller("HomeController",
 	($scope) ->
 
 		$scope.home_images = [
-				title: "Patient Log In"
+				title: "Patient"
 				img_url: ""
 			,
-				title: "Physician Log In"
+				title: "Physician"
 				img_url: ""
 		]
 

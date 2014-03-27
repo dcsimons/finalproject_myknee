@@ -67,7 +67,7 @@ p1 = Patient.create(
 	knee_location: "Right", 
 	surgery_type: "Total Knee Replacement",
 	knee_company: "Zimmer",
-	knee_company_img: "app/assets/images/zimmer_logo.png",
+	knee_company_img: "zimmer_logo.png",
 	knee_brand: "Persona",
 	address1: "1000 Main Street",
 	address2: "",

@@ -1,17 +1,25 @@
 <div ng-controller="PatientController">
 	<h1>Patients</h1>
-	<br />
-	<table class="table">
+	<table class="table patients-tbl">
+    <colgroup>
+      <col class="col-sm-4" />
+      <col class="col-sm-4" />
+      <col class="col-sm-4" />
+    </colgroup>
     <thead>
-      <td><h3>Name</h3></td>
-      <td><h3>Knee Location</h3></td>
-      <td><h3>Surgery Type</h3></td>
+      <tr class="patients-tbl-header">
+        <td><h3>Name</h3></td>
+        <td class="tbl-center"><h3>Knee Location</h3></td>
+        <td class="tbl-right"><h3>Surgery Type</h3></td>
+      </tr>
     </thead>
-    <tr ng-repeat="patient in patients">
-      <td><a href="/#/patients/{{patient.id}}">{{patient.name}}</a></td>
-      <td>{{patient.knee_location}}</td>
-      <td>{{patient.surgery_type}}</td>
-    </tr>
+    <tbody>
+      <tr ng-repeat="patient in patients">
+        <td><a href="/#/patients/{{patient.id}}">{{patient.name}}</a></td>
+        <td class="tbl-center">{{patient.knee_location}}</td>
+        <td class="tbl-right">{{patient.surgery_type}}</td>
+      </tr>
+    </tbody>
   </table>
 
 </div>

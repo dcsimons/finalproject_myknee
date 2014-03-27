@@ -6,16 +6,115 @@ body {
 	max-width: 760px;
 	margin: 0 auto;
 	border: 2px solid gray;
+	position: relative;
+}
+
+/* ##### BEGIN styling for NavBar #################################### */
+
+/* ----- modified Bootstrap CSS ------------------------------------- */
+
+.navbar-default .navbar-brand {
+  color: #444444;
+}
+
+/*----- end Bootstrap CSS --------------------------------------------- */
+
+.nav-contain {
+  height: 100px;
+  background-color: white;
+  border: none;
+}
+
+.myKnee-logo {
+  display: inline-block;
+  margin-top: 10px;
+  font-family: 'Paytone One', sans-serif;
+  font-size: 80px;
+}
+
+/* ##### END styling for NavBar ###################################### */
+
+.home {
+	height: 400px;
+	text-align: center;
+	background-image: url("hiking_blue.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  /*background-color: black;*/
+}
+
+.patient-physician {
+	height: 200px;
+	width: 150px;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	margin-right: 50px;
+	margin-bottom: 100px;
+
+}
+
+.btn-home {
+	margin: 10px;
+	width: 120px;
+	text-align: center;
 }
 
 .tbl-center {
 	text-align: center;
 }
 
+.tbl-right {
+	text-align: right;
+}
+
 .btn-right {
 	float: right;
 	margin-right: 20px;
 }
+
+/* ##### BEGIN styling for patients_index #################################### */
+
+.patients-tbl {
+	border: 3px solid #3c6eb2;
+}
+
+.patients-tbl-header {
+	background-color: #3c6eb2
+	color: white;
+}
+
+/* ##### END styling for patients_index #################################### */
+
+/* ##### BEGIN styling for single_patient_index #################################### */
+
+.patient-div {
+	display: inline-block;
+	height: 300px;
+	width: 300px;
+	float: left;
+	text-align: left;
+}
+
+.surgery-div {
+	display: inline-block;
+	height: 200px;
+	width: 350px;
+	float: right;
+	text-align: right;
+}
+
+.single-patient-tbl {
+	border: 3px solid #319140;
+}
+
+.single-patient-tbl-header {
+	background-color: #319140
+	color: white;
+}
+
+/* ##### END styling for single_patient_index #################################### */
 
 .input-field {
   display: inline-block;

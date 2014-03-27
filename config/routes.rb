@@ -1,7 +1,5 @@
 MyKnee::Application.routes.draw do
 
-  resources :surveys
-
   get "/", to: "home#index"
 
   get "/home", to: "templates#home"
