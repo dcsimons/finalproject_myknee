@@ -12,7 +12,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr  ng-repeat="survey in patient.surveys">
+      <tr  ng-repeat="survey in patient.surveys | orderBy:survey.id">
         <td><a href="/#/patients/{{patient_id}}/surveys/{{survey.id}}">{{survey.time_period}}</a></td>
         <td class="tbl-center">{{survey.status}}</td>
         <td  class="tbl-center" ng-show="survey_status[$index].take">
