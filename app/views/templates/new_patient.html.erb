@@ -1,0 +1,47 @@
+<div ng-controller="PhysicianController">
+	<h1>{{physician.practice}}</h1>
+  <h2>{{physician.name}}</h2>
+	<br />
+  <h3>New Patient Form</h3>
+	<input class="input-field" ng-model="patient.name" placeholder="Patient Name" type="text" /><br />
+  <select class="dropdown-field" ng-model="patient.knee_location" placeholder="Knee Location">
+    <option value="" selected="selected">Select Knee Location</option>
+    <option value="Right">Right</option>
+    <option value="Left">Left</option>
+  </select><br />
+  <select class="dropdown-field" ng-model="patient.surgery_type" placeholder="Surgery Type">
+    <option value="" selected="selected">Select Surgery Type</option>
+    <option value="Total Knee Replacement">Total Knee Replacement</option>
+    <option value="Partial Knee Replacement">Partial Knee Replacement</option>
+    <option value="Revision Knee Replacement">Revision Knee Replacement</option>
+  </select><br />
+  <select class="dropdown-field" ng-model="patient.knee_company" placeholder="Knee Company">
+    <option value="" selected="selected">Select Company</option>
+    <option value="Biomet">Biomet</option>
+    <option value="DePuy">DePuy</option>
+    <option value="Stryker">Stryker</option>
+    <option value="Zimmer">Zimmer</option>
+  </select><br />
+  <select class="dropdown-field" ng-model="patient.knee_brand" placeholder="Knee Brand">
+    <option value="" selected="selected">Select Brand</option>
+    <option value="Biomet">Biomet Vanguard</option>
+    <option value="DePuy">DePuy Sigma</option>
+    <option value="Stryker">Stryker Scorpio</option>
+    <option value="Zimmer">Zimmer Persona</option>
+  </select><br />
+  <input class="input-field" ng-model="patient.address1" placeholder="Address First Line" type="text" /><br />
+  <input class="input-field" ng-model="patient.address2" placeholder="APT#, STE#, etc." type="text" /><br />
+  <input class="input-field" ng-model="patient.city" placeholder="City" type="text" /><br />
+  <input class="input-field" ng-model="patient.state" placeholder="State" type="text" /><br />
+  <input class="input-field" ng-model="patient.zipcode" placeholder="5-Digit Zip Code" type="text" /><br />
+  <input class="input-field" ng-model="patient.phone" placeholder="10-Digit Phone Number" type="text" /><br />
+  <input class="input-field" ng-model="patient.email" placeholder="Patient Email" type="text" /><br />
+  
+  <a href="/#/physicians/{{physician.id}}">
+    <button class="btn btn-success btn-right" ng-click="createNewPatient()">Create Patient</button>
+  </a>
+  <a href="/#/physicians/{{physician.id}}">
+    <button class="btn btn-danger btn-right">Cancel Entry</button>
+  </a>
+
+</div>

@@ -32,4 +32,8 @@ class TemplatesController < ApplicationController
 		render layout: false
 	end
 
+	def new_patient
+		render layout: false
+	end
+
 end

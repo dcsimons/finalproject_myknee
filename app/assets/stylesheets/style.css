@@ -1,3 +1,13 @@
+body {
+	padding: 40px 0 40px 0;
+}
+
+.body-contain {
+	max-width: 760px;
+	margin: 0 auto;
+	border: 2px solid gray;
+}
+
 .tbl-center {
 	text-align: center;
 }
@@ -5,4 +15,26 @@
 .btn-right {
 	float: right;
 	margin-right: 20px;
+}
+
+.input-field {
+  display: inline-block;
+  width: 280px;
+  height: 35px;
+  padding: 8px;
+  margin-top: 10px;
+  border: 1px solid gray;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.dropdown-field {
+  display: inline-block;
+  width: 280px;
+  height: 35px;
+  padding: 8px;
+  margin-top: 10px;
+  border: 1px solid gray;
+  border-radius: 4px;
+  font-size: 12px;
 }

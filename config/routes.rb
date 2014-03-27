@@ -13,6 +13,7 @@ MyKnee::Application.routes.draw do
 
   get "/physicians_index", to: "templates#physicians_index"
   get "/single_physician", to: "templates#single_physician"
+  get "/single_physician_new_patient", to: "templates#new_patient"
   
   resources :physicians, :except => [:new, :edit]
   resources :patients, :except => [:new, :edit] do

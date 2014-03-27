@@ -20,6 +20,18 @@ class PatientsController < ApplicationController
   # POST /patients.json
   def create
     @patient = Patient.new(patient_params)
+    company = patient_params[:knee_company]
+    if company == "Biomet"
+      @patient.knee_company_img = "app/assets/images/biomet_logo.png"
+    elsif company == "DePuy"
+      @patient.knee_company_img = "app/assets/images/depuy_logo.png"
+    elsif company == "Stryker"
+      @patient.knee_company_img = "app/assets/images/stryker_logo.png"
+    elsif company == "Zimmer"
+      @patient.knee_company_img = "app/assets/images/zimmer_logo.png"
+    end
+    @patient.save
+
     @patient.surveys.create(time_period: "1 Month", status: "OPEN")
     @patient.surveys.create(time_period: "3 Months", status: "OPEN")
     @patient.surveys.create(time_period: "6 Months", status: "OPEN")
@@ -60,6 +72,6 @@ class PatientsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def patient_params
-      params.require(:patient).permit(:physician_id, :name, :knee_location, :surgery_type, :knee_brand, :knee_brand_type, :address1, :address2, :city, :state, :zipcode, :phone, :email)
+      params.require(:patient).permit(:physician_id, :name, :knee_location, :surgery_type, :knee_company, :knee_company_img, :knee_brand, :address1, :address2, :city, :state, :zipcode, :phone, :email)
     end
 end

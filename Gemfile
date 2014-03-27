@@ -9,6 +9,8 @@ gem 'devise'
 
 gem 'angularjs-rails'
 
+gem 'pry', group: [:test, :development]
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
 
