@@ -1,4 +1,4 @@
-<div class="container" ng-controller="PhysicianController">
+<div ng-controller="PhysicianController">
 	<h1>{{physician.practice}}</h1>
   <h2>{{physician.name}}</h2>
 	<br />
@@ -6,6 +6,11 @@
     <button class="btn btn-primary btn-right">Create New Patient</button>
   </a>
   <table class="table">
+    <colgroup>
+      <col class="col-sm-5" />
+      <col class="col-sm-3" />
+      <col class="col-sm-4" />
+    </colgroup>
     <thead>
       <tr>
         <td colspan="3"><h3>Patients</h3></td>
