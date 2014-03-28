@@ -40,7 +40,6 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  /*background-color: black;*/
 }
 
 .patient-physician {
@@ -84,7 +83,7 @@ body {
 }
 
 .patients-tbl-header {
-	background-color: #3c6eb2
+	background-color: #3c6eb2;
 	color: white;
 }
 
@@ -126,7 +125,7 @@ body {
 }
 
 .single-patient-tbl-header {
-	background-color: #32399b
+	background-color: #32399b;
 	color: white;
 }
 
@@ -135,7 +134,7 @@ body {
 }
 
 .take-patient-tbl-header {
-	background-color: #319140
+	background-color: #319140;
 	color: white;
 }
 
@@ -144,7 +143,7 @@ body {
 }
 
 .update-patient-tbl-header {
-	background-color: #ed9c28
+	background-color: #ed9c28;
 	color: white;
 }
 
@@ -153,7 +152,7 @@ body {
 }
 
 .survey-result-tbl-header {
-	background-color: #4a297a
+	background-color: #4a297a;
 	color: white;
 }
 /* ##### END styling for single_patient views #################################### */
@@ -179,7 +178,7 @@ body {
 }
 
 .physicians-tbl-header {
-	background-color: #3c6eb2
+	background-color: #3c6eb2;
 	color: white;
 }
 
@@ -188,7 +187,7 @@ body {
 }
 
 .single-physician-tbl-header {
-	background-color: #32399b
+	background-color: #32399b;
 	color: white;
 }
 
