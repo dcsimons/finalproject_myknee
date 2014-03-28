@@ -50,15 +50,16 @@ body {
 	position: absolute;
 	right: 0;
 	bottom: 0;
-	margin-right: 50px;
-	margin-bottom: 100px;
+	margin-right: 80px;
+	margin-bottom: 140px;
 
 }
 
 .btn-home {
 	margin: 10px;
-	width: 120px;
+	width: 180px;
 	text-align: center;
+	font-size: 32px;
 }
 
 .tbl-center {
@@ -73,6 +74,8 @@ body {
 	float: right;
 	margin-right: 20px;
 	margin-bottom: 20px;
+	margin-top: 20px;
+	font-size: 20px;
 }
 
 /* ##### BEGIN styling for patients_index #################################### */
@@ -156,24 +159,87 @@ body {
 }
 /* ##### END styling for single_patient views #################################### */
 
+/* ##### BEGIN styling for physician views #################################### */
+
+.physician-div {
+	border-top: 4px solid gray;
+}
+
+.physician-info-div {
+	display: inline-block;
+	height: 200px;
+	width: 600px;
+	float: left;
+	text-align: left;
+	margin-left: 20px;
+	margin-bottom: 40px;
+}
+
+.physicians-tbl {
+	border: 3px solid #3c6eb2;
+}
+
+.physicians-tbl-header {
+	background-color: #3c6eb2
+	color: white;
+}
+
+.single-physician-tbl {
+	border: 3px solid #32399b;
+}
+
+.single-physician-tbl-header {
+	background-color: #32399b
+	color: white;
+}
+
+.patient-form {
+	width: 480px;
+	text-align: center;
+	margin: 0 auto;
+}
+
+.patient-form-header {
+	text-align: left;
+	margin-left: 60px;
+}
+
 .input-field {
   display: inline-block;
-  width: 280px;
-  height: 35px;
+  width: 360px;
+  height: 50px;
   padding: 8px;
   margin-top: 10px;
   border: 1px solid gray;
   border-radius: 4px;
-  font-size: 12px;
+  text-align: left;
+  font-size: 20px;
 }
 
 .dropdown-field {
   display: inline-block;
-  width: 280px;
-  height: 35px;
+  width: 360px;
+  height: 50px;
   padding: 8px;
   margin-top: 10px;
   border: 1px solid gray;
   border-radius: 4px;
-  font-size: 12px;
+  text-align: left;
+  font-size: 20px;
+}
+
+.btn-patient-form {
+	float: right;
+	margin-right: 60px;
+	margin-bottom: 20px;
+	margin-top: 20px;
+	font-size: 20px;
+}
+
+.btn-cancel-form {
+	float: right;
+	margin-right: 20px;
+	margin-bottom: 20px;
+	margin-top: 20px;
+	font-size: 20px;
 }

@@ -1,17 +1,26 @@
 <div ng-controller="PhysicianController">
-	<h1>{{physician.practice}}</h1>
-  <h2>{{physician.name}}</h2>
-	<br />
+	<div class="physician-div">
+    <div class="physician-info-div">
+      <h1>{{physician.practice}}</h1>
+      <h2>{{physician.name}}</h2>
+      <h4>
+        {{physician.address1}}<br />
+        {{physician.address2}}<br />
+        {{physician.city}}, {{physician.state}} {{physician.zipcode}}<br />
+        {{physician.email}}
+      </h4>
+    </div>
+  </div>
 	<a href="/#/physicians/{{physician.id}}/new_patient">
     <button class="btn btn-primary btn-right">Create New Patient</button>
   </a>
-  <table class="table">
+  <table class="table table-striped single-physician-tbl">
     <colgroup>
       <col class="col-sm-5" />
       <col class="col-sm-3" />
       <col class="col-sm-4" />
     </colgroup>
-    <thead>
+    <thead class="single-physician-tbl-header">
       <tr>
         <td colspan="3"><h3>Patients</h3></td>
       </tr>
