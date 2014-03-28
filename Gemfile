@@ -11,7 +11,7 @@ gem 'angularjs-rails'
 
 gem 'pry', group: [:test, :development]
 
-gem 'rails_12factor' # gem needed for heroku
+gem 'rails_12factor', group: :production # gem needed for heroku
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
