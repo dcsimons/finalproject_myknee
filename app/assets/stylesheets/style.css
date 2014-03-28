@@ -72,6 +72,7 @@ body {
 .btn-right {
 	float: right;
 	margin-right: 20px;
+	margin-bottom: 20px;
 }
 
 /* ##### BEGIN styling for patients_index #################################### */
@@ -87,34 +88,73 @@ body {
 
 /* ##### END styling for patients_index #################################### */
 
-/* ##### BEGIN styling for single_patient_index #################################### */
+/* ##### BEGIN styling for single_patient views #################################### */
 
 .patient-div {
+	border: 3px solid black;
+	height: 280px;
+	margin-bottom: 20px;
+	background-color: #aec634s
+}
+
+.info-div {
 	display: inline-block;
-	height: 300px;
+	height: 280px;
 	width: 300px;
 	float: left;
 	text-align: left;
+	margin-left: 20px;
 }
 
 .surgery-div {
 	display: inline-block;
-	height: 200px;
-	width: 350px;
+	height: 280px;
+	width: 360px;
 	float: right;
 	text-align: right;
+	margin-right: 20px;
+}
+
+.surgery-div > img {
+	width: 200px;
 }
 
 .single-patient-tbl {
-	border: 3px solid #319140;
+	border: 3px solid #32399b;
 }
 
 .single-patient-tbl-header {
+	background-color: #32399b
+	color: white;
+}
+
+.take-patient-tbl {
+	border: 3px solid #319140;
+}
+
+.take-patient-tbl-header {
 	background-color: #319140
 	color: white;
 }
 
-/* ##### END styling for single_patient_index #################################### */
+.update-patient-tbl {
+	border: 3px solid #ed9c28;
+}
+
+.update-patient-tbl-header {
+	background-color: #ed9c28
+	color: white;
+}
+
+.survey-result-tbl {
+	border: 3px solid #4a297a;
+}
+
+.survey-result-tbl-header {
+	background-color: #4a297a
+	color: white;
+}
+/* ##### END styling for single_patient views #################################### */
 
 .input-field {
   display: inline-block;

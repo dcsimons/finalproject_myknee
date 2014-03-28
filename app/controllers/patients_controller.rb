@@ -25,13 +25,13 @@ class PatientsController < ApplicationController
     @patient = physician.patients.new(patient_params)
     company = patient_params[:knee_company]
     if company == "Biomet"
-      @patient.knee_company_img = "app/assets/images/biomet_logo.png"
+      @patient.knee_company_img = "/images/biomet_logo.png"
     elsif company == "DePuy"
-      @patient.knee_company_img = "app/assets/images/depuy_logo.png"
+      @patient.knee_company_img = "/images/depuy_logo.png"
     elsif company == "Stryker"
-      @patient.knee_company_img = "app/assets/images/stryker_logo.png"
+      @patient.knee_company_img = "/images/stryker_logo.png"
     elsif company == "Zimmer"
-      @patient.knee_company_img = "app/assets/images/zimmer_logo.png"
+      @patient.knee_company_img = "/images/zimmer_logo.png"
     end
     @patient.save
 

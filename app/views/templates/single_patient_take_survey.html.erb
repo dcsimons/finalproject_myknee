@@ -1,10 +1,23 @@
 <div ng-controller="SurveyController">
-	<h1>{{patient.name}}</h1>
-  <h2>{{patient.surgery_type}}</h2>
-  <h2>{{patient.knee_location}} Knee</h2>
-	<br />
-  <table class="table table-striped">
-    <thead>
+	<div class="patient-div">
+    <div class="info-div">
+      <h1>{{patient.name}}</h1>
+      <h4>
+        {{patient.address1}}<br />
+        {{patient.address2}}<br />
+        {{patient.city}}, {{patient.state}} {{patient.zipcode}}<br />
+        {{patient.email}}
+      </h4>
+    </div>
+    <div class="surgery-div">
+      <h2>{{patient.surgery_type}}</h2>
+      <h2>{{patient.knee_location}} Knee</h2>
+      <img ng-src='{{patient.knee_company_img}}' />
+      <h3><em>{{patient.knee_brand}}</em></h3>  
+    </div>
+  </div>
+  <table class="table table-striped take-patient-tbl">
+    <thead class="take-patient-tbl-header">
       <tr>
         <td><h4>{{survey.time_period}} Survey</h4></td>
         <td colspan="5" class="tbl-center"><h4>Rating (1-Low to 5-High)</h4></td>
