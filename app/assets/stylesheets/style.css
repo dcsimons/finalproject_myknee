@@ -101,7 +101,7 @@ body {
 .info-div {
 	display: inline-block;
 	height: 280px;
-	width: 300px;
+	width: 270px;
 	float: left;
 	text-align: left;
 	margin-left: 20px;
@@ -110,7 +110,7 @@ body {
 .surgery-div {
 	display: inline-block;
 	height: 280px;
-	width: 360px;
+	width: 400px;
 	float: right;
 	text-align: right;
 	margin-right: 20px;
